@@ -13,6 +13,7 @@ import ViewCategory from "./pages/admin/category/viewCategory";
 import AddCategory from "./pages/admin/category/addCategory";
 import EditCategory from "./pages/admin/category/editCategory";
 import UserPanel from "./pages/user/panel";
+
 function App() {
   // const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   // const token = useSelector((state)=>state.login.token);
@@ -32,6 +33,7 @@ function App() {
         <Route path="/item" element={<Items />} />
         <Route path="/users" element={<Users />} />
         <Route path ="/panel" element={<UserPanel />} />
+        
       </Routes>
    </Layout>
   );
