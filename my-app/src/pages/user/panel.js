@@ -5,6 +5,7 @@ import { ItemsURL, PhotoURL } from "../../config/url-constant";
 import cartSlice from "../../store/cart-slice.js"
 import { useDispatch,useSelector } from 'react-redux';
 const UserPanel = () => {
+
         const [items, setItems] = useState([]);
         const dispatch = useDispatch();
         const cart = useSelector((state) => state.cart.cart);
@@ -14,9 +15,10 @@ const UserPanel = () => {
           fetchitems();
         }, []);
         const fetchitems = async () => {
-          const response = await fetch(ItemsURL);
-          const responseData = await response.json();
-          console.log(responseData);
+          // const response = await fetch(ItemsURL);
+          // const responseData = await response.json();
+          // console.log(responseData);
+          
           setItems(responseData);
         };
        
@@ -145,7 +147,7 @@ const UserPanel = () => {
       {items.map((item)=>(<>
       <div key={item._id}></div>
         <div class="items">
-       <div class="img"><img src={PhotoURL + item.profile} alt="User Image" /></div>
+       <div class="img"><img src={ item.profile} alt="User Image" /></div>
         <div class="name">{item.title}   {item?.brand_id?.title}</div>
         <div class="price">{item.price}</div>
         {/* <div class="name"></div> */}
